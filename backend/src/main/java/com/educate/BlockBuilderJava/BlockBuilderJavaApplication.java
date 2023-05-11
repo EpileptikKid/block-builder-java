@@ -9,5 +9,4 @@ public class BlockBuilderJavaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BlockBuilderJavaApplication.class, args);
 	}
-
 }

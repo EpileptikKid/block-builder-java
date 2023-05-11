@@ -3,4 +3,5 @@ target/
 .mvn/
 
 .idea/
+node_modules/
 
