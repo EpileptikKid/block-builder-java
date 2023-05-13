@@ -1,15 +1,18 @@
 import './App.css'
 import { useState } from 'react'
-import Square from './Square'
+import Square from './reaction/chain-numbers/Square'
+import SquareContainer from './reaction/chain-numbers/SquareContainer'
 
 function App() {
-  const [data, setData] = useState({})
+  const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   const fetchData = () => {
     setIsLoading(true)
     fetch(
-      `http://localhost:8080/home?width=${window.innerWidth}&height=${window.innerHeight}`
+      `http://localhost:8080/numbers?width=${window.innerWidth}&height=${
+        window.innerHeight
+      }&count=${5}`
     )
       .then((response) => response.json())
       .then((resp) => setData(resp))
@@ -18,8 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={fetchData}>Load Data</button>
-      {isLoading ? <p>Loading...</p> : <Square x={data.x} y={data.y} />}
+      <SquareContainer />
     </div>
   )
 }
