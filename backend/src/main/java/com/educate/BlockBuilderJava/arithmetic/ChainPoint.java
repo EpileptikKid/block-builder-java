@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class ChainPoint {
     private int id;
+    private int counter;
     private int widthCoordinate;
     private int heightCoordinate;
     private int resultValue;
