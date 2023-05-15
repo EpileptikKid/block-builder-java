@@ -27,6 +27,7 @@ const SquareContainer = () => {
   }
 
   const fetchData = () => {
+    setScore(0)
     fetch(
       `http://localhost:8080/numbers?width=${window.innerWidth}&height=${
         window.innerHeight
@@ -47,8 +48,7 @@ const SquareContainer = () => {
         handleAddTime()
       }
     } else {
-      data.shift()
-      setScore(score - 1)
+      data.length = 0
     }
     const newData = [...data]
     setData(newData)
@@ -57,6 +57,7 @@ const SquareContainer = () => {
   return (
     <div>
       {data.length < 1 && <button onClick={fetchData}>Почати гру</button>}
+      {data.length < 1 && score > 0 && <h2>рахунок - {score}</h2>}
 
       {data.length > 0 && (
         <div>

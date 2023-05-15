@@ -1,5 +1,8 @@
 package com.educate.BlockBuilderJava;
 
+import com.educate.BlockBuilderJava.arithmetic.ChainPoint;
+import com.educate.BlockBuilderJava.arithmetic.CoordinateGenerator;
+import com.educate.BlockBuilderJava.arithmetic.ValueSetter;
 import com.educate.BlockBuilderJava.elements.OneTaskPoint;
 import com.educate.BlockBuilderJava.elements.Point;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +24,12 @@ public class MainController {
         return ResponseEntity.ok().body(points);
     }
 
+    @RequestMapping("/hello")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<String> hello() {
+        return ResponseEntity.ok().body("hello");
+    }
+
     public List<OneTaskPoint> getTasks(int width, int height, int count) {
         List<OneTaskPoint> tasks = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -34,6 +43,8 @@ public class MainController {
         int w = width/230 - 1;
         int h = height/230 - 1;
         List<Integer> integerSet = Helper.getIntegerSet(w*h, 100);
+
+
 
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < h; j++) {

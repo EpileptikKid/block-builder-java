@@ -1,15 +1,13 @@
 package com.educate.BlockBuilderJava.arithmetic;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleLevelCreator implements NumberChainLevelCreator {
+public class SimpleLevelCreator implements LevelCreator {
     @Override
-    public List<ChainPoint> createLevel(int widthMonitor, int heightMonitor, int countElement) {
-        List<ChainPoint> resultLevelPoints = new ArrayList<>();
-        final int numberOfPlacesInWidth = widthMonitor/230 - 1;
-        final int numberOfPlacesInHeight = heightMonitor/230 - 1;
-
+    public Level createLevels(int numberOfLevels) {
+        Level resultLevel = new Level();
+        resultLevel.setConditions("simple");
+        List<ValuePoint> valuePoints = LevelUtils.generateValuePoints(5);
         return null;
     }
 }
